@@ -1,17 +1,12 @@
-
 import './App.css';
-import UserContextProvider from './context/UserContextProvider';
-import Login from "./components/login";
-import Profile from './components/profile';
+import Dashboard from './context/Note/Dashboard';
+import NoteState from './context/Note/NoteState';
 function App() {
   return (
-    <UserContextProvider>
-      <div className="App">
-        <div>Hlo man</div>
-      </div>
-      <Login />
-      <Profile />
-    </UserContextProvider>
+    // Wrap the Dashboard component with NoteState to provide context
+    <NoteState>
+      <Dashboard />
+    </NoteState>
   );
 }
 

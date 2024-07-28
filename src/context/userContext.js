@@ -1,9 +1,19 @@
 // A context can be for anything. user, card or what not
 // this is step 1 ----creating a context
-import React, {createContext} from "react";
+import React, {createContext, useContext} from "react";
 
-const UserContext = createContext();
+// const UserContext = createContext();
+// export default UserContext;
+export const ThemeContext = createContext({
+    themeMode : "light",
+    darkTheme: () => {},
+    lightTheme: () => {}
+})
 
-export default UserContext;
+export const ThemeProvider = ThemeContext.Provider;
+
+export default function useTheme() {
+    return useContext(ThemeContext)
+}
 
 // context provides a provider. we'll wrap all our components with UserContext
