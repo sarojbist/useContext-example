@@ -9,5 +9,6 @@ function App() {
     </NoteState>
   );
 }
+// nothing to add today
 
 export default App;
